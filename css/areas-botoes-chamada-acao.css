@@ -1,0 +1,23 @@
+.area-botoes-chamada-acao ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    list-style-type: none;
+}
+
+.item-lista-botoes-chamada-acao a {
+    display: inline-block;
+    font-size: 1.6rem;
+    text-decoration: none;
+    line-height: normal;
+    color: #fff;
+    background-color: var(--cor-4);
+    padding: 1.6rem 1.8rem;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+.item-lista-botoes-chamada-acao a:hover {
+    background-color: var(--cor-5);
+}

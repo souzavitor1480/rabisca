@@ -1,0 +1,74 @@
+/* Conteúdo principal */
+.conteudo-principal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 3.2rem;
+    padding-bottom: 8rem;
+}
+
+.secao-introducao,
+.area-imagem-destaque {
+    text-align: center;
+}
+
+.secao-introducao h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+}
+
+.secao-introducao p {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.area-imagem-destaque img {
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+}
+
+.area-imagem-destaque figcaption {
+    font-size: 1.6rem;
+}
+
+/* Responsividade */
+
+/* Notebooks (>= 992px) */
+@media (min-width: 992px) {
+    .secao-introducao h2 {
+        font-size: 2.6rem;
+    }
+
+    .secao-introducao p {
+        font-size: 2rem;
+    }
+
+    .item-lista-botoes-chamada-acao a {
+        font-size: 1.8rem;
+        padding: 1.8rem 2rem;
+    }
+
+    .area-imagem-destaque img {
+        width: 450px;
+    }
+}
+
+/* Desktops (>= 1200px) */
+@media (min-width: 1200px) {
+    .conteudo-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5rem;
+    }
+
+    .secao-introducao {
+        text-align: inherit;
+    }
+
+    .area-botoes-chamada-acao ul {
+        justify-content: flex-start;
+    }
+}
