@@ -1,0 +1,9 @@
+.conteudo-principal {
+    width: 700px;
+}
+
+.conteudo-principal h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+}

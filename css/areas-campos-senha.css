@@ -1,0 +1,19 @@
+.area-campo-senha {
+    position: relative;
+}
+
+.area-campo-senha input {
+    padding-right: 4rem;
+}
+
+.area-campo-senha button {
+    position: absolute;
+    top: 1.7rem;
+    right: 1.3rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabisca | Cadastre-se</title>
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/conteudos-principais.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/areas-campos-senha.css">
+    <link rel="stylesheet" href="css/campos-pergunta-seguranca.css">
+    <link rel="stylesheet" href="css/textos-alternam-formularios.css">
+    <link rel="stylesheet" href="css/links.css">
+    <link rel="stylesheet" href="css/modais.css">
+    <link rel="stylesheet" href="css/modais-alerta.css">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JavaScript -->
+    <script type="module" src="javascript/principal.js"></script>
+    <script type="module" src="javascript/fechamento-modal-alerta.js"></script>
+    <script type="module" src="javascript/encerramento-sessao.js"></script>
+    <script type="module" src="javascript/alternancia-exibicao-senha.js"></script>
+    <script type="module" src="javascript/cadastro-usuario.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="area-logo">
+            <img src="imagens/logo.svg" alt="Logo do Rabisca">
+            <h1>Rabisca</h1>
+        </div>
+        <div class="area-menu-navegacao">
+            <button type="button" id="botaoAlternaExibicaoMenuNavegacao">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav id="menuNavegacao">
+                <ul>
+                    <li class="item-lista-menu-navegacao">
+                        <a href="index.html">
+                            <i class="bi bi-house"></i> Início
+                        </a>
+                    </li>
+                    <li class="item-lista-menu-navegacao">
+                        <a href="cadastro-usuario.html">
+                            <i class="bi bi-person-add"></i> Cadastre-se
+                        </a>
+                    </li>
+                    <li class="item-lista-menu-navegacao">
+                        <a href="login.html">
+                            <i class="bi bi-box-arrow-in-right"></i> Faça login
+                        </a>
+                    </li>
+                    <li class="item-lista-menu-navegacao">
+                        <a href="sobre-dev.html">
+                            <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Conteúdo principal -->
+    <main class="conteudo-principal">
+        <h2>
+            Cadastre-se <i class="bi bi-person-add"></i>
+        </h2>
+        <form id="formulario" novalidate>
+            <label for="nome" class="rotulo">
+                Nome de usuário: <span>*</span>
+            </label>
+            <input type="text" name="nome" id="nome" class="campo" placeholder="Digite um nome de usuário" maxlength="70" required>
+            <label for="senha" class="rotulo">
+                Senha: <span>*</span>
+            </label>
+            <div class="area-campo-senha">
+                <input type="password" name="senha" id="senha" class="campo" placeholder="Digite uma senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$" title="A senha é obrigatória e deve conter entre 8 e 30 caracteres, incluindo uma letra minúscula, uma letra maiúscula, um número e um caractere especial." maxlength="30" required>
+                <button type="button" id="botaoAlternaExibicaoSenha">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </div>
+            <label for="perguntaSeguranca" class="rotulo">
+                Pergunta de segurança: <span>*</span>
+            </label>
+            <select name="pergunta_seguranca" id="perguntaSeguranca" class="campo" required>
+                <option value="">Selecione uma opção</option>
+                <option value="0">Qual era o nome do seu primeiro professor favorito?</option>
+                <option value="1">Qual era o nome do seu primeiro animal de estimação?</option>
+                <option value="2">Qual era o nome do seu brinquedo favorito na infância?</option>
+            </select>
+            <label for="resposta" class="rotulo">
+                Resposta: <span>*</span>
+            </label>
+            <input type="text" name="resposta" id="resposta" class="campo" placeholder="Digite uma resposta" maxlength="40" required>
+            <button type="submit" class="botao-envia-formulario">
+                Cadastrar-se <i class="bi bi-person-add"></i>
+            </button>
+        </form>
+        <p>
+            Já tem uma conta? <a href="login.html" class="link">Faça login</a>
+        </p>
+    </main>
+    <!-- Ferramentas de acessibilidade -->
+    <div class="area-ferramentas-acessibilidade">
+        <button type="button" id="botaoAlternaExibicaoListaBotoesAcessibilidade">
+            <i class="bi bi-universal-access"></i>
+        </button>
+        <ul id="listaBotoesAcessibilidade">
+            <li>
+                <button type="button" id="botaoAumentaTamanhoFonte">A+</button>
+            </li>
+            <li>
+                <button type="button" id="botaoDiminuiTamanhoFonte">A-</button>
+            </li>
+            <li>
+                <button type="button" id="botaoRedefineTamanhoFonte">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <!-- Modal de alerta -->
+    <div id="fundoModalAlerta" class="fundo-modal"></div>
+    <div id="modalAlerta" class="modal">
+        <h3>
+            Aviso <i class="bi bi-exclamation-triangle"></i>
+        </h3>
+        <p></p>
+        <button type="button">
+            Fechar <i class="bi bi-x-square"></i>
+        </button>
+    </div>
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p id="creditos">
+            <i class="bi bi-c-circle"></i>
+            <span>2025</span> Rabisca | Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+</html>
