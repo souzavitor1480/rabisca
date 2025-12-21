@@ -1,0 +1,19 @@
+.container-campo-senha {
+    position: relative;
+}
+
+.senha {
+    padding-right: 4rem;
+}
+
+.botao-alternar-senha {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.3rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

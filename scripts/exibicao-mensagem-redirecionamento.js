@@ -1,4 +1,4 @@
-import { alternarModalAlerta } from "./utilitarios.js";
+import { alternarModalAlerta } from './utilitarios.js';
 
 window.addEventListener('load', function () {
     const mensagemRedirecionamento = this.localStorage.getItem('mensagem-redirecionamento');

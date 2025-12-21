@@ -1,5 +1,10 @@
 import { axiosCustomizado } from './customizacoes.js';
 
+export const formulario = document.querySelector('#formulario');
+export const nome = document.querySelector('#nome');
+export const senha = document.querySelector('#senha');
+export const perguntaSeguranca = document.querySelector('#pergunta-seguranca');
+export const resposta = document.querySelector('#resposta');
 export const fundoModalAlerta = document.querySelector('#fundo-modal-alerta');
 const modalAlerta = document.querySelector('#modal-alerta');
 const textoModalAlerta = document.querySelector('#texto-modal-alerta');
@@ -66,11 +71,116 @@ export function detectarTeclaEsc(event, callback) {
 
 export function alternarModalAlerta(exibir, mensagem) {
     alternarElementos(exibir, [fundoModalAlerta, modalAlerta]);
-    textoModalAlerta.textContent = exibir ? mensagem : '';
+
+    if (exibir) {
+        textoModalAlerta.textContent = mensagem;
+    }
 }
 
 export function alternarElementos(exibir, elementos) {
     elementos.forEach(function (elemento) {
         elemento.classList.toggle('ativo', exibir);
     });
+}
+
+export function enviarFormulario(event, callback) {
+    event.preventDefault();
+    callback();
+}
+
+export async function gerenciarUsuario(dadosUsuario) {
+    const { metodo, urlEnvio, acao, campos, urlRedirecionamento } = dadosUsuario;
+    let parametros = {};
+    parametros.acao = acao;
+
+    for (const campo of campos) {
+        const valorCampo = campo.value.trim();
+
+        switch (campo.id) {
+            case 'nome':
+                if (!validarCampoObrigatorio(campo, valorCampo, 30)) {
+                    exibirErro('Erro: O nome de usuário é obrigatório e deve conter até 30 caracteres. Por favor, tente novamente.', campo);
+                    return;
+                }
+
+                parametros.nome = valorCampo;
+                break;
+            case 'senha':
+                if (!campo.checkValidity() || !new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$/).test(valorCampo)) {
+                    exibirErro('Erro: A senha é obrigatória e deve conter entre 8 e 30 caracteres, incluindo uma letra minúscula, uma letra maiúscula, um número e um caractere especial. Por favor, tente novamente.', campo);
+
+                    return;
+                }
+
+                parametros.senha = valorCampo;
+                break;
+            case 'pergunta-seguranca':
+                if (!campo.checkValidity() || !['0', '1', '2'].includes(valorCampo)) {
+                    exibirErro('Erro: A pergunta de segurança é obrigatória e deve ser válida.', campo);
+                    return;
+                }
+
+                parametros.perguntaSeguranca = valorCampo;
+                break;
+            case 'resposta':
+                if (!validarCampoObrigatorio(campo, valorCampo, 40)) {
+                    exibirErro('Erro: A resposta é obrigatória e deve conter até 40 caracteres. Por favor, tente novamente.', campo);
+                    return;
+                }
+
+                parametros.resposta = valorCampo;
+                break;
+            default:
+                alternarModalAlerta(true, 'Erro: Campo inválido. Por favor, tente novamente mais tarde.');
+                return;
+        }
+    }
+
+    const { sucesso, dados, mensagem } = await enviarDados(metodo, urlEnvio, parametros);
+
+    if (!sucesso) {
+        const { campoErro } = dados;
+        let encontrouCampoErro = false;
+        alternarModalAlerta(true, mensagem);
+
+        for (const campo of campos) {
+            if (campoErro === campo.id) {
+                limparCampo(campo);
+                encontrouCampoErro = true;
+            }
+        }
+
+        if (!encontrouCampoErro) {
+            limparCampos(campos);
+        }
+
+        return;
+    }
+
+    redirecionar(mensagem, urlRedirecionamento);
+}
+
+function validarCampoObrigatorio(campo, valorCampo, quantidadeMaximaCaracteres) {
+    return campo.checkValidity() && valorCampo && valorCampo.length <= quantidadeMaximaCaracteres;
+}
+
+function exibirErro(mensagemErro, campoErro) {
+    alternarModalAlerta(true, mensagemErro);
+    limparCampo(campoErro);
+}
+
+function limparCampo(campo) {
+    campo.value = '';
+    campo.blur();
+}
+
+function limparCampos(campos) {
+    campos.forEach(function (elemento) {
+        limparCampo(elemento);
+    });
+}
+
+function redirecionar(mensagemRedirecionamento, urlRedirecionamento) {
+    localStorage.setItem('mensagem-redirecionamento', mensagemRedirecionamento);
+    window.location.href = urlRedirecionamento;
 }

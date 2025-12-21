@@ -20,7 +20,6 @@ body {
 
 .cabecalho {
     text-align: center;
-    min-height: auto;
 }
 
 .container-logo {
@@ -42,9 +41,6 @@ body {
 }
 
 .container-barra-navegacao {
-    position: sticky;
-    top: 0;
-    left: 0;
     color: #fff;
     background-color: #c84755;
 }
