@@ -64,9 +64,9 @@ export function detectarTeclaEsc(event, callback) {
     }
 }
 
-export function alternarModalAlerta(exibir, mensagem) {
+export function alternarModalAlerta(exibir, mensagem = '') {
     alternarElementos(exibir, [fundoModalAlerta, modalAlerta]);
-    textoModalAlerta.textContent = exibir ? mensagem : '';
+    textoModalAlerta.textContent = mensagem;
 }
 
 export function alternarElementos(exibir, elementos) {
