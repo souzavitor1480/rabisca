@@ -1,8 +1,0 @@
-#modalAlerta button {
-    align-self: flex-end;
-    background-color: var(--cor-2);
-}
-
-#modalAlerta button:hover {
-    background-color: var(--cor-3);
-}

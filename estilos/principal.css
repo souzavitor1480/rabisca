@@ -1,16 +1,3 @@
-/* Variáveis */
-:root {
-    --cor-1: #e1e3cc;
-    --cor-2: #c84755;
-    --cor-3: #a83844;
-    --cor-4: #e08e4c;
-    --cor-5: #b36f3a;
-    --cor-6: #62a48d;
-    --cor-7: #4a7f6e;
-    --cor-8: #495672;
-}
-
-/* Estilos gerais */
 * {
     padding: 0;
     margin: 0;
@@ -26,17 +13,17 @@ body {
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    color: #333;
-    background-color: var(--cor-1);
+    color: #1a1a1a;
+    background-color: #e1e3cc;
     min-height: 100dvh;
 }
 
-/* Cabeçalho */
 .cabecalho {
     text-align: center;
+    min-height: auto;
 }
 
-.area-logo {
+.container-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,21 +32,24 @@ body {
     padding: 3.2rem 1.6rem;
 }
 
-.area-logo img {
+.imagem-logo {
     max-width: 100%;
     height: auto;
 }
 
-.area-logo h1 {
+.texto-logo {
     font-size: 3.2rem;
 }
 
-.area-menu-navegacao {
+.container-barra-navegacao {
+    position: sticky;
+    top: 0;
+    left: 0;
     color: #fff;
-    background-color: var(--cor-2);
+    background-color: #c84755;
 }
 
-.area-menu-navegacao button {
+.botao-alternar-barra-navegacao {
     font-family: inherit;
     font-size: 1.6rem;
     color: inherit;
@@ -70,38 +60,31 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.area-menu-navegacao button:hover {
-    background-color: var(--cor-3);
+.botao-alternar-barra-navegacao:hover {
+    background-color: #a63a46;
 }
 
 .bi {
     pointer-events: none;
 }
 
-#menuNavegacao {
+.barra-navegacao {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    background-color: var(--cor-3);
+    background-color: #a63a46;
     height: 0;
     transition: 0.5s ease-in-out;
 }
 
-#menuNavegacao ul {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-}
-
-.item-lista-menu-navegacao a {
-    display: inline-block;
+.link-barra-navegacao {
     font-size: 1.6rem;
     text-decoration: none;
     line-height: normal;
     color: inherit;
-    width: 100%;
     padding: 1.6rem 1.8rem;
 }
 
-/* Conteúdo principal */
 .conteudo-principal {
     flex: 1;
     align-self: center;
@@ -110,8 +93,7 @@ body {
     padding: 3.2rem 0;
 }
 
-/* Ferramentas de acessibilidade */
-.area-ferramentas-acessibilidade {
+.ferramentas-acessibilidade {
     display: flex;
     flex-direction: column-reverse;
     gap: 1.5rem;
@@ -120,12 +102,11 @@ body {
     right: 1.5rem;
 }
 
-.area-ferramentas-acessibilidade button {
+.botao-acessibilidade {
     font-family: inherit;
     font-size: 1.5rem;
     color: #fff;
-    background-color: var(--cor-6);
-    width: 100%;
+    background-color: #62a48d;
     padding: 1.5rem;
     border: none;
     border-radius: 8px;
@@ -133,55 +114,49 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-.area-ferramentas-acessibilidade button:hover {
-    background-color: var(--cor-7);
+.botao-acessibilidade:hover {
+    background-color: #4f8f79;
 }
 
-#listaBotoesAcessibilidade {
+.container-botoes-acessibilidade {
     display: flex;
     flex-direction: column-reverse;
     gap: 1.5rem;
-    list-style-type: none;
     overflow: hidden;
     height: 0;
     transition: 0.5s ease-in-out;
 }
 
-/* Rodapé */
 .rodape {
     text-align: center;
     color: #fff;
-    background-color: var(--cor-8);
+    background-color: #495672;
     padding: 1.6rem;
 }
 
-.rodape p {
+.creditos {
     font-size: 1.6rem;
 }
 
-/* Desktops (>= 1200px) */
 @media (min-width: 1200px) {
-    .area-menu-navegacao button {
+    .botao-alternar-barra-navegacao {
         display: none;
     }
 
-    #menuNavegacao {
+    .barra-navegacao {
+        flex-direction: row;
+        justify-content: center;
         overflow: visible;
         background-color: transparent;
         height: auto;
         transition: none;
     }
 
-    #menuNavegacao ul {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .item-lista-menu-navegacao a {
+    .link-barra-navegacao {
         transition: 0.5s ease-in-out;
     }
 
-    .item-lista-menu-navegacao a:hover {
-        background-color: var(--cor-3);
+    .link-barra-navegacao:hover {
+        background-color: #a63a46;
     }
 }

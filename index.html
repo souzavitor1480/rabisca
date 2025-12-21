@@ -1,128 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabisca | Seu bloco de notas on-line</title>
-    <!-- Favicon -->
+    <title>Rabisca | Seu bloco de notas online</title>
     <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/areas-botoes-chamada-acao.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/links.css">
-    <link rel="stylesheet" href="css/modais.css">
-    <link rel="stylesheet" href="css/modais-alerta.css">
-    <!-- Axios -->
+    <link rel="stylesheet" href="estilos/principal.css">
+    <link rel="stylesheet" href="estilos/containers-botoes-chamada-acao.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="estilos/links.css">
+    <link rel="stylesheet" href="estilos/modais.css">
+    <link rel="stylesheet" href="estilos/botoes-fechar-modais-alerta.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- JavaScript -->
-    <script type="module" src="javascript/principal.js"></script>
-    <script type="module" src="javascript/fechamento-modal-alerta.js"></script>
-    <script type="module" src="javascript/exibicao-mensagem-redirecionamento.js"></script>
-    <script type="module" src="javascript/encerramento-sessao.js"></script>
+    <script type="module" src="scripts/principal.js"></script>
+    <script type="module" src="scripts/fechamento-modal-alerta.js"></script>
+    <script type="module" src="scripts/exibicao-mensagem-redirecionamento.js"></script>
+    <script type="module" src="scripts/encerramento-sessao.js"></script>
 </head>
+
 <body>
-    <!-- Cabeçalho -->
     <header class="cabecalho">
-        <div class="area-logo">
-            <img src="imagens/logo.svg" alt="Logo do Rabisca">
-            <h1>Rabisca</h1>
+        <div class="container-logo">
+            <img src="imagens/logo.svg" alt="Logo do Rabisca" class="imagem-logo">
+            <h1 class="texto-logo">Rabisca</h1>
         </div>
-        <div class="area-menu-navegacao">
-            <button type="button" id="botaoAlternaExibicaoMenuNavegacao">
-                <i class="bi bi-list"></i>
+        <div class="container-barra-navegacao">
+            <button type="button" id="botao-alternar-barra-navegacao" class="botao-alternar-barra-navegacao">
+                <i id="icone-alternar-barra-navegacao" class="bi bi-list"></i>
             </button>
-            <nav id="menuNavegacao">
-                <ul>
-                    <li class="item-lista-menu-navegacao">
-                        <a href="index.html">
-                            <i class="bi bi-house"></i> Início
-                        </a>
-                    </li>
-                    <li class="item-lista-menu-navegacao">
-                        <a href="cadastro-usuario.html">
-                            <i class="bi bi-person-add"></i> Cadastre-se
-                        </a>
-                    </li>
-                    <li class="item-lista-menu-navegacao">
-                        <a href="login.html">
-                            <i class="bi bi-box-arrow-in-right"></i> Faça login
-                        </a>
-                    </li>
-                    <li class="item-lista-menu-navegacao">
-                        <a href="sobre-dev.html">
-                            <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
-                        </a>
-                    </li>
-                </ul>
+            <nav id="barra-navegacao" class="barra-navegacao">
+                <a href="index.html" class="link-barra-navegacao">
+                    <i class="bi bi-house"></i> Início
+                </a>
+                <a href="cadastro-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-person-add"></i> Criar conta
+                </a>
+                <a href="login.html" class="link-barra-navegacao">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                </a>
+                <a href="sobre-desenvolvedor.html" class="link-barra-navegacao">
+                    <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+                </a>
             </nav>
         </div>
     </header>
-    <!-- Conteúdo principal -->
     <main class="conteudo-principal">
         <section class="secao-introducao">
-            <h2>Suas anotações sempre ao seu alcance</h2>
-            <p>Tire suas ideias da cabeça sem complicações.</p>
-            <nav class="area-botoes-chamada-acao">
-                <ul>
-                    <li class="item-lista-botoes-chamada-acao">
-                        <a href="cadastro-usuario.html">
-                            Cadastre-se <i class="bi bi-person-add"></i>
-                        </a>
-                    </li>
-                    <li class="item-lista-botoes-chamada-acao">
-                        <a href="login.html">
-                            Faça login <i class="bi bi-box-arrow-in-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <h2 class="titulo-secao-introducao">Suas anotações sempre ao seu alcance</h2>
+            <p class="texto-secao-introducao">Anote tudo de forma simples e rápida.</p>
+            <div class="container-botoes-chamada-acao">
+                <a href="cadastro-usuario.html" class="botao-chamada-acao">
+                    Criar conta <i class="bi bi-person-add"></i>
+                </a>
+                <a href="login.html" class="botao-chamada-acao">
+                    Entrar <i class="bi bi-box-arrow-in-right"></i>
+                </a>
+            </div>
         </section>
         <figure class="area-imagem-destaque">
-            <img src="imagens/bloco-notas.svg" alt="Ilustração de um bloco de notas">
-            <figcaption>
+            <img src="imagens/bloco-notas.svg" alt="Ilustração de um bloco de notas" class="imagem-destaque">
+            <figcaption class="legenda-imagem-destaque">
                 Ilustração por <a href="https://storyset.com/work" target="_blank" class="link">Storyset</a>
             </figcaption>
         </figure>
     </main>
-    <!-- Ferramentas de acessibilidade -->
-    <div class="area-ferramentas-acessibilidade">
-        <button type="button" id="botaoAlternaExibicaoListaBotoesAcessibilidade">
+    <div class="ferramentas-acessibilidade">
+        <button type="button" id="botao-alternar-container-botoes-acessibilidade" class="botao-acessibilidade">
             <i class="bi bi-universal-access"></i>
         </button>
-        <ul id="listaBotoesAcessibilidade">
-            <li>
-                <button type="button" id="botaoAumentaTamanhoFonte">A+</button>
-            </li>
-            <li>
-                <button type="button" id="botaoDiminuiTamanhoFonte">A-</button>
-            </li>
-            <li>
-                <button type="button" id="botaoRedefineTamanhoFonte">
-                    <i class="bi bi-arrow-counterclockwise"></i>
-                </button>
-            </li>
-        </ul>
+        <div id="container-botoes-acessibilidade" class="container-botoes-acessibilidade">
+            <button type="button" id="botao-aumentar-fonte" class="botao-acessibilidade">A+</button>
+            <button type="button" id="botao-diminuir-fonte" class="botao-acessibilidade">A-</button>
+            <button type="button" id="botao-redefinir-fonte" class="botao-acessibilidade">
+                <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+        </div>
     </div>
-    <!-- Modal de alerta -->
-    <div id="fundoModalAlerta" class="fundo-modal"></div>
-    <div id="modalAlerta" class="modal">
-        <h3>
-            Aviso <i class="bi bi-exclamation-triangle"></i>
+    <div id="fundo-modal-alerta" class="fundo-modal"></div>
+    <div id="modal-alerta" class="modal">
+        <h3 class="titulo-modal">
+            Atenção <i class="bi bi-exclamation-triangle"></i>
         </h3>
-        <p></p>
-        <button type="button">
+        <p id="texto-modal-alerta" class="texto-modal"></p>
+        <button type="button" id="botao-fechar-modal-alerta" class="botao-modal botao-fechar-modal-alerta">
             Fechar <i class="bi bi-x-square"></i>
         </button>
     </div>
-    <!-- Rodapé -->
     <footer class="rodape">
-        <p id="creditos">
+        <p class="creditos">
             <i class="bi bi-c-circle"></i>
-            <span>2025</span> Rabisca | Todos os direitos reservados.
+            <span id="container-ano-atual">2025</span> Rabisca - Todos os direitos reservados.
         </p>
     </footer>
 </body>
+
 </html>

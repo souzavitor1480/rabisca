@@ -1,8 +1,0 @@
-.conteudo-principal p {
-    font-size: 1.6rem;
-    margin-bottom: 1.6rem;
-}
-
-.conteudo-principal p:last-child {
-    margin: 0;
-}

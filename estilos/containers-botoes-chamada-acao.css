@@ -1,23 +1,21 @@
-.area-botoes-chamada-acao ul {
+.container-botoes-chamada-acao {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.6rem;
-    list-style-type: none;
 }
 
-.item-lista-botoes-chamada-acao a {
-    display: inline-block;
+.botao-chamada-acao {
     font-size: 1.6rem;
     text-decoration: none;
     line-height: normal;
     color: #fff;
-    background-color: var(--cor-4);
+    background-color: #e08e4c;
     padding: 1.6rem 1.8rem;
     border-radius: 8px;
     transition: 0.5s ease-in-out;
 }
 
-.item-lista-botoes-chamada-acao a:hover {
-    background-color: var(--cor-5);
+.botao-chamada-acao:hover {
+    background-color: #c9783f;
 }
