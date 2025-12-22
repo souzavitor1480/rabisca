@@ -7,15 +7,5 @@
 
 .botao-chamada-acao {
     font-size: 1.6rem;
-    text-decoration: none;
-    line-height: normal;
-    color: #fff;
-    background-color: #e08e4c;
     padding: 1.6rem 1.8rem;
-    border-radius: 8px;
-    transition: 0.5s ease-in-out;
-}
-
-.botao-chamada-acao:hover {
-    background-color: #c9783f;
 }

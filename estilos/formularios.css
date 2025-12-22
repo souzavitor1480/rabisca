@@ -34,18 +34,7 @@
     box-shadow: 0 0 10px #e08e4c;
 }
 
-.botao-enviar-formulario {
-    font-family: inherit;
+.botao-formulario {
     font-size: 1.5rem;
-    color: #fff;
-    background-color: #e08e4c;
     padding: 1.5rem 1.7rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
-}
-
-.botao-enviar-formulario:hover {
-    background-color: #c9783f;
 }

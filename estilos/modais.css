@@ -54,12 +54,6 @@
 }
 
 .botao-modal {
-    font-family: inherit;
     font-size: 1.3rem;
-    color: #fff;
     padding: 1.3rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
 }

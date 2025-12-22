@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="estilos/formularios.css">
     <link rel="stylesheet" href="estilos/containers-campos-senha.css">
     <link rel="stylesheet" href="estilos/campos-pergunta-seguranca.css">
+    <link rel="stylesheet" href="estilos/botoes-principais.css">
     <link rel="stylesheet" href="estilos/textos-alternar-formularios.css">
     <link rel="stylesheet" href="estilos/links.css">
     <link rel="stylesheet" href="estilos/modais.css">
+    <link rel="stylesheet" href="estilos/botoes-perigo.css">
     <link rel="stylesheet" href="estilos/botoes-fechar-modais-alerta.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="scripts/principal.js"></script>
@@ -27,8 +29,8 @@
 <body>
     <header class="cabecalho">
         <div class="container-logo">
-            <img src="imagens/logo.svg" alt="Logo do Rabisca" class="imagem-logo">
-            <h1 class="texto-logo">Rabisca</h1>
+            <img src="imagens/logo.svg" alt="Logo do Rabisca">
+            <h1>Rabisca</h1>
         </div>
         <div class="container-barra-navegacao">
             <button type="button" id="botao-alternar-barra-navegacao" class="botao-alternar-barra-navegacao">
@@ -51,7 +53,7 @@
         </div>
     </header>
     <main class="conteudo-principal">
-        <h2 class="titulo-conteudo-principal">
+        <h2>
             Criar conta <i class="bi bi-person-add"></i>
         </h2>
         <form id="formulario" class="formulario" novalidate>
@@ -87,7 +89,7 @@
             </label>
             <input type="text" name="resposta" id="campo-resposta" class="campo" placeholder="Digite uma resposta"
                 maxlength="40" required>
-            <button type="submit" class="botao-enviar-formulario">
+            <button type="submit" class="botao botao-principal botao-formulario">
                 Criar conta <i class="bi bi-person-add"></i>
             </button>
         </form>
@@ -96,13 +98,14 @@
         </p>
     </main>
     <div class="ferramentas-acessibilidade">
-        <button type="button" id="botao-alternar-container-botoes-acessibilidade" class="botao-acessibilidade">
+        <button type="button" id="botao-alternar-container-botoes-acessibilidade"
+            class="botao botao-sucesso botao-acessibilidade">
             <i class="bi bi-universal-access"></i>
         </button>
         <div id="container-botoes-acessibilidade" class="container-botoes-acessibilidade">
-            <button type="button" id="botao-aumentar-fonte" class="botao-acessibilidade">A+</button>
-            <button type="button" id="botao-diminuir-fonte" class="botao-acessibilidade">A-</button>
-            <button type="button" id="botao-redefinir-fonte" class="botao-acessibilidade">
+            <button type="button" id="botao-aumentar-fonte" class="botao botao-sucesso botao-acessibilidade">A+</button>
+            <button type="button" id="botao-diminuir-fonte" class="botao botao-sucesso botao-acessibilidade">A-</button>
+            <button type="button" id="botao-redefinir-fonte" class="botao botao-sucesso botao-acessibilidade">
                 <i class="bi bi-arrow-counterclockwise"></i>
             </button>
         </div>
@@ -113,7 +116,8 @@
             Atenção <i class="bi bi-exclamation-triangle"></i>
         </h3>
         <p id="texto-modal-alerta" class="texto-modal"></p>
-        <button type="button" id="botao-fechar-modal-alerta" class="botao-modal botao-fechar-modal-alerta">
+        <button type="button" id="botao-fechar-modal-alerta"
+            class="botao botao-perigo botao-modal botao-fechar-modal-alerta">
             Fechar <i class="bi bi-x-square"></i>
         </button>
     </div>

@@ -18,6 +18,61 @@ body {
     min-height: 100dvh;
 }
 
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+i {
+    display: inline-block;
+    pointer-events: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    line-height: normal;
+    color: inherit;
+}
+
+h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+span {
+    display: inline-block;
+}
+
+.botao {
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+.botao-sucesso {
+    background-color: #62a48d;
+}
+
+.botao-sucesso:hover {
+    background-color: #4f8f79;
+}
+
 .cabecalho {
     text-align: center;
 }
@@ -31,37 +86,19 @@ body {
     padding: 3.2rem 1.6rem;
 }
 
-.imagem-logo {
-    max-width: 100%;
-    height: auto;
-}
-
-.texto-logo {
-    font-size: 3.2rem;
-}
-
 .container-barra-navegacao {
     color: #fff;
     background-color: #c84755;
 }
 
 .botao-alternar-barra-navegacao {
-    font-family: inherit;
     font-size: 1.6rem;
-    color: inherit;
-    background-color: transparent;
     padding: 1.6rem 1.8rem;
-    border: none;
-    cursor: pointer;
     transition: 0.5s ease-in-out;
 }
 
 .botao-alternar-barra-navegacao:hover {
     background-color: #a63a46;
-}
-
-.bi {
-    pointer-events: none;
 }
 
 .barra-navegacao {
@@ -75,9 +112,6 @@ body {
 
 .link-barra-navegacao {
     font-size: 1.6rem;
-    text-decoration: none;
-    line-height: normal;
-    color: inherit;
     padding: 1.6rem 1.8rem;
 }
 
@@ -99,19 +133,8 @@ body {
 }
 
 .botao-acessibilidade {
-    font-family: inherit;
     font-size: 1.5rem;
-    color: #fff;
-    background-color: #62a48d;
     padding: 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
-}
-
-.botao-acessibilidade:hover {
-    background-color: #4f8f79;
 }
 
 .container-botoes-acessibilidade {
