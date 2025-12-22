@@ -116,7 +116,7 @@ export async function gerenciarUsuario(dadosUsuario) {
                 break;
             case 'campo-pergunta-seguranca':
                 if (!campo.checkValidity() || !['0', '1', '2'].includes(valorCampo)) {
-                    exibirErro('Erro: A pergunta de segurança é obrigatória e deve ser válida.', campo);
+                    exibirErro('Erro: A pergunta de segurança é obrigatória e deve ser válida. Por favor, tente novamente.', campo);
                     return;
                 }
 
