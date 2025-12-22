@@ -4,6 +4,6 @@ const botaoAlternarSenha = document.querySelector('#botao-alternar-senha');
 const iconeAlternarSenha = document.querySelector('#icone-alternar-senha');
 
 botaoAlternarSenha.addEventListener('click', function () {
-    campoSenha.type = senha.type === 'password' ? 'text' : 'password';
+    campoSenha.type = campoSenha.type === 'password' ? 'text' : 'password';
     alternarIcones(campoSenha.type !== 'password', iconeAlternarSenha, 'bi-eye', 'bi-eye-slash');
 });
