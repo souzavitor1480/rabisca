@@ -3,9 +3,9 @@ import { formulario, campoNome, campoSenha, campoPerguntaSeguranca, campoRespost
 formulario.addEventListener('submit', function (event) {
     enviarFormulario(event, function () {
         gerenciarUsuario({
-            metodo: 'POST',
-            urlEnvio: 'cadastro-usuario.php',
-            acao: 'criar-conta',
+            metodo: 'PATCH',
+            urlEnvio: 'recuperacao-senha.php',
+            acao: 'recuperar-senha',
             campos: [campoNome, campoSenha, campoPerguntaSeguranca, campoResposta],
             urlRedirecionamento: 'login.html'
         });

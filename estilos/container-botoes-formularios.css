@@ -1,0 +1,20 @@
+.container-botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.botao-voltar {
+    font-size: 1.5rem;
+    text-decoration: none;
+    line-height: normal;
+    color: #fff;
+    background-color: #c84755;
+    padding: 1.5rem 1.7rem;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+.botao-voltar:hover {
+    background-color: #a63a46;
+}

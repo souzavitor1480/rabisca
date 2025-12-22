@@ -1,0 +1,34 @@
+.conteudo-principal {
+    text-align: center;
+}
+
+.imagem-desenvolvedor {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1.6rem;
+}
+
+.texto-conteudo-principal {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.container-links-redes-sociais {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.link-rede-social {
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.5s ease-in-out;
+}
+
+.link-rede-social:hover {
+    color: #3f7fb0;
+}

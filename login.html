@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabisca | Criar conta</title>
+    <title>Rabisca | Entrar</title>
     <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estilos/principal.css">
     <link rel="stylesheet" href="estilos/conteudos-principais.css">
     <link rel="stylesheet" href="estilos/formularios.css">
     <link rel="stylesheet" href="estilos/containers-campos-senha.css">
-    <link rel="stylesheet" href="estilos/campos-pergunta-seguranca.css">
     <link rel="stylesheet" href="estilos/textos-alternar-formularios.css">
     <link rel="stylesheet" href="estilos/links.css">
     <link rel="stylesheet" href="estilos/modais.css">
@@ -19,9 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="scripts/principal.js"></script>
     <script type="module" src="scripts/fechamento-modal-alerta.js"></script>
+    <script type="module" src="scripts/exibicao-mensagem-redirecionamento.js"></script>
     <script type="module" src="scripts/encerramento-sessao.js"></script>
     <script type="module" src="scripts/alternancia-senha.js"></script>
-    <script type="module" src="scripts/cadastro-usuario.js"></script>
+    <script type="module" src="scripts/login.js"></script>
 </head>
 
 <body>
@@ -52,47 +52,35 @@
     </header>
     <main class="conteudo-principal">
         <h2 class="titulo-conteudo-principal">
-            Criar conta <i class="bi bi-person-add"></i>
+            Entrar <i class="bi bi-box-arrow-in-right"></i>
         </h2>
         <form id="formulario" class="formulario" novalidate>
             <label for="campo-nome" class="label">
                 Nome de usuário: <span class="obrigatorio">*</span>
             </label>
-            <input type="text" name="nome" id="campo-nome" class="campo" placeholder="Digite um nome de usuário"
+            <input type="text" name="nome" id="campo-nome" class="campo" placeholder="Digite seu nome de usuário"
                 maxlength="30" required>
             <label for="campo-senha" class="label">
                 Senha: <span class="obrigatorio">*</span>
             </label>
             <div class="container-campo-senha">
                 <input type="password" name="senha" id="campo-senha" class="campo campo-senha"
-                    placeholder="Digite uma senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$"
+                    placeholder="Digite sua senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$"
                     title="A senha é obrigatória e deve conter entre 8 e 30 caracteres, incluindo uma letra minúscula, uma letra maiúscula, um número e um caractere especial."
                     maxlength="30" required>
                 <button type="button" id="botao-alternar-senha" class="botao-alternar-senha">
                     <i id="icone-alternar-senha" class="bi bi-eye"></i>
                 </button>
             </div>
-            <label for="campo-pergunta-seguranca" class="label">
-                Pergunta de segurança: <span class="obrigatorio">*</span>
-            </label>
-            <select name="pergunta-seguranca" id="campo-pergunta-seguranca" class="campo campo-pergunta-seguranca"
-                required>
-                <option value="">Selecione uma opção</option>
-                <option value="0">Qual era o nome do seu primeiro animal de estimação?</option>
-                <option value="1">Qual era o nome do seu primeiro professor?</option>
-                <option value="2">Qual era o nome do seu brinquedo favorito na infância?</option>
-            </select>
-            <label for="campo-resposta" class="label">
-                Resposta: <span class="obrigatorio">*</span>
-            </label>
-            <input type="text" name="resposta" id="campo-resposta" class="campo" placeholder="Digite uma resposta"
-                maxlength="40" required>
             <button type="submit" class="botao-enviar-formulario">
-                Criar conta <i class="bi bi-person-add"></i>
+                Entrar <i class="bi bi-box-arrow-in-right"></i>
             </button>
         </form>
         <p class="texto-alternar-formularios">
-            Já tem uma conta? <a href="login.html" class="link">Entrar</a>
+            Ainda não tem uma conta? <a href="cadastro-usuario.html" class="link">Criar conta</a>
+        </p>
+        <p class="texto-alternar-formularios">
+            Esqueceu sua senha? <a href="recuperacao-senha.html" class="link">Recuperar senha</a>
         </p>
     </main>
     <div class="ferramentas-acessibilidade">

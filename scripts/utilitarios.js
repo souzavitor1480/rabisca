@@ -1,10 +1,10 @@
 import { axiosCustomizado } from './customizacoes.js';
 
 export const formulario = document.querySelector('#formulario');
-export const nome = document.querySelector('#nome');
-export const senha = document.querySelector('#senha');
-export const perguntaSeguranca = document.querySelector('#pergunta-seguranca');
-export const resposta = document.querySelector('#resposta');
+export const campoNome = document.querySelector('#campo-nome');
+export const campoSenha = document.querySelector('#campo-senha');
+export const campoPerguntaSeguranca = document.querySelector('#campo-pergunta-seguranca');
+export const campoResposta = document.querySelector('#resposta');
 export const fundoModalAlerta = document.querySelector('#fundo-modal-alerta');
 const modalAlerta = document.querySelector('#modal-alerta');
 const textoModalAlerta = document.querySelector('#texto-modal-alerta');
@@ -144,7 +144,7 @@ export async function gerenciarUsuario(dadosUsuario) {
         alternarModalAlerta(true, mensagem);
 
         for (const campo of campos) {
-            if (campoErro === campo.id) {
+            if (campoErro === campo.name) {
                 limparCampo(campo);
                 encontrouCampoErro = true;
             }
