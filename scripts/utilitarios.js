@@ -97,7 +97,7 @@ export async function gerenciarUsuario(dadosUsuario) {
         const valorCampo = campo.value.trim();
 
         switch (campo.id) {
-            case 'nome':
+            case 'campo-nome':
                 if (!validarCampoObrigatorio(campo, valorCampo, 30)) {
                     exibirErro('Erro: O nome de usuário é obrigatório e deve conter até 30 caracteres. Por favor, tente novamente.', campo);
                     return;
@@ -105,7 +105,7 @@ export async function gerenciarUsuario(dadosUsuario) {
 
                 parametros.nome = valorCampo;
                 break;
-            case 'senha':
+            case 'campo-senha':
                 if (!campo.checkValidity() || !new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$/).test(valorCampo)) {
                     exibirErro('Erro: A senha é obrigatória e deve conter entre 8 e 30 caracteres, incluindo uma letra minúscula, uma letra maiúscula, um número e um caractere especial. Por favor, tente novamente.', campo);
 
@@ -114,7 +114,7 @@ export async function gerenciarUsuario(dadosUsuario) {
 
                 parametros.senha = valorCampo;
                 break;
-            case 'pergunta-seguranca':
+            case 'campo-pergunta-seguranca':
                 if (!campo.checkValidity() || !['0', '1', '2'].includes(valorCampo)) {
                     exibirErro('Erro: A pergunta de segurança é obrigatória e deve ser válida.', campo);
                     return;
@@ -122,7 +122,7 @@ export async function gerenciarUsuario(dadosUsuario) {
 
                 parametros.perguntaSeguranca = valorCampo;
                 break;
-            case 'resposta':
+            case 'campo-resposta':
                 if (!validarCampoObrigatorio(campo, valorCampo, 40)) {
                     exibirErro('Erro: A resposta é obrigatória e deve conter até 40 caracteres. Por favor, tente novamente.', campo);
                     return;
