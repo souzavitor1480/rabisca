@@ -4,26 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabisca | Entrar</title>
+    <title>Rabisca | Editar dados</title>
     <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/conteudos-principais.css">
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/containers-campos-senha.css">
+    <link rel="stylesheet" href="css/campos-pergunta-seguranca.css">
     <link rel="stylesheet" href="css/botoes-principais.css">
-    <link rel="stylesheet" href="css/textos-alternar-formularios.css">
-    <link rel="stylesheet" href="css/links.css">
     <link rel="stylesheet" href="css/modais.css">
     <link rel="stylesheet" href="css/botoes-perigo.css">
     <link rel="stylesheet" href="css/botoes-fechar-modais-alerta.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="javascript/principal.js"></script>
     <script type="module" src="javascript/fechamento-modal-alerta.js"></script>
-    <script type="module" src="javascript/exibicao-mensagem-redirecionamento.js"></script>
-    <script type="module" src="javascript/encerramento-sessao.js"></script>
     <script type="module" src="javascript/alternancia-senha.js"></script>
-    <script type="module" src="javascript/login.js"></script>
+    <script type="module" src="javascript/verificacao-sessao-expirou.js"></script>
+    <script type="module" src="javascript/logout.js"></script>
+    <script type="module" src="javascript/edicao-usuario.js"></script>
 </head>
 
 <body>
@@ -37,53 +36,68 @@
                 <i id="icone-alternar-barra-navegacao" class="bi bi-list"></i>
             </button>
             <nav id="barra-navegacao" class="barra-navegacao">
-                <a href="index.html" class="link-barra-navegacao">
-                    <i class="bi bi-house"></i> Início
+                <a href="painel.html" class="link-barra-navegacao">
+                    <i class="bi bi-speedometer"></i> Painel
                 </a>
-                <a href="cadastro-usuario.html" class="link-barra-navegacao">
-                    <i class="bi bi-person-add"></i> Criar conta
+                <a href="cadastro-nota.html" class="link-barra-navegacao">
+                    <i class="bi bi-plus-square"></i> Cadastrar nota
                 </a>
-                <a href="login.html" class="link-barra-navegacao">
-                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                <a href="consulta-notas.html" class="link-barra-navegacao">
+                    <i class="bi bi-search"></i> Consultar notas
                 </a>
-                <a href="sobre-desenvolvedor.html" class="link-barra-navegacao">
-                    <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+                <a href="edicao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-pencil-square"></i> Editar dados
+                </a>
+                <a href="delecao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-trash"></i> Deletar conta
+                </a>
+                <a href="javascript:void(0)" id="link-logout" class="link-barra-navegacao">
+                    <i class="bi bi-box-arrow-in-left"></i> Sair
                 </a>
             </nav>
         </div>
     </header>
     <main class="conteudo-principal">
         <h2>
-            Entrar <i class="bi bi-box-arrow-in-right"></i>
+            Editar dados <i class="bi bi-pencil-square"></i>
         </h2>
         <form id="formulario" class="formulario" novalidate>
             <label for="campo-nome" class="label">
-                Nome de usuário: <span class="obrigatorio">*</span>
+                Novo nome de usuário: <span class="obrigatorio">*</span>
             </label>
-            <input type="text" name="nome" id="campo-nome" class="campo" placeholder="Digite seu nome de usuário"
+            <input type="text" name="nome" id="campo-nome" class="campo" placeholder="Digite um novo nome de usuário"
                 maxlength="30" required>
             <label for="campo-senha" class="label">
-                Senha: <span class="obrigatorio">*</span>
+                Nova senha: <span class="obrigatorio">*</span>
             </label>
             <div class="container-campo-senha">
                 <input type="password" name="senha" id="campo-senha" class="campo campo-senha"
-                    placeholder="Digite sua senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$"
+                    placeholder="Digite uma nova senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,30}$"
                     title="A senha é obrigatória e deve conter entre 8 e 30 caracteres, incluindo uma letra minúscula, uma letra maiúscula, um número e um caractere especial."
                     maxlength="30" required>
                 <button type="button" id="botao-alternar-senha" class="botao-alternar-senha">
                     <i id="icone-alternar-senha" class="bi bi-eye"></i>
                 </button>
             </div>
+            <label for="campo-pergunta-seguranca" class="label">
+                Nova pergunta de segurança: <span class="obrigatorio">*</span>
+            </label>
+            <select name="pergunta-seguranca" id="campo-pergunta-seguranca" class="campo campo-pergunta-seguranca"
+                required>
+                <option value="">Selecione uma opção</option>
+                <option value="0">Qual era o nome do seu primeiro animal de estimação?</option>
+                <option value="1">Qual era o nome do seu primeiro professor?</option>
+                <option value="2">Qual era o nome do seu brinquedo favorito na infância?</option>
+            </select>
+            <label for="campo-resposta" class="label">
+                Resposta: <span class="obrigatorio">*</span>
+            </label>
+            <input type="text" name="resposta" id="campo-resposta" class="campo" placeholder="Digite uma nova resposta"
+                maxlength="40">
             <button type="submit" class="botao botao-principal botao-formulario">
-                Entrar <i class="bi bi-box-arrow-in-right"></i>
+                Editar dados <i class="bi bi-pencil-square"></i>
             </button>
         </form>
-        <p class="texto-alternar-formularios">
-            Ainda não tem uma conta? <a href="cadastro-usuario.html" class="link">Criar conta</a>
-        </p>
-        <p class="texto-alternar-formularios">
-            Esqueceu sua senha? <a href="recuperacao-senha.html" class="link">Recuperar senha</a>
-        </p>
     </main>
     <div class="ferramentas-acessibilidade">
         <button type="button" id="botao-alternar-container-botoes-acessibilidade"

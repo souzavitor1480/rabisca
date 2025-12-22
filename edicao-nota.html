@@ -4,22 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabisca | Seu bloco de notas online</title>
+    <title>Rabisca | Editar nota</title>
     <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/conteudos-principais.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/campos-texto.css">
+    <link rel="stylesheet" href="css/containers-botoes-formularios.css">
     <link rel="stylesheet" href="css/botoes-principais.css">
-    <link rel="stylesheet" href="css/containers-botoes-chamada-acao.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/links.css">
-    <link rel="stylesheet" href="css/modais.css">
     <link rel="stylesheet" href="css/botoes-perigo.css">
+    <link rel="stylesheet" href="css/modais.css">
     <link rel="stylesheet" href="css/botoes-fechar-modais-alerta.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="javascript/principal.js"></script>
     <script type="module" src="javascript/fechamento-modal-alerta.js"></script>
-    <script type="module" src="javascript/exibicao-mensagem-redirecionamento.js"></script>
-    <script type="module" src="javascript/encerramento-sessao.js"></script>
+    <script type="module" src="javascript/verificacao-sessao-expirou.js"></script>
+    <script type="module" src="javascript/logout.js"></script>
+    <script type="module" src="javascript/edicao-nota.js"></script>
 </head>
 
 <body>
@@ -33,40 +35,52 @@
                 <i id="icone-alternar-barra-navegacao" class="bi bi-list"></i>
             </button>
             <nav id="barra-navegacao" class="barra-navegacao">
-                <a href="index.html" class="link-barra-navegacao">
-                    <i class="bi bi-house"></i> Início
+                <a href="painel.html" class="link-barra-navegacao">
+                    <i class="bi bi-speedometer"></i> Painel
                 </a>
-                <a href="cadastro-usuario.html" class="link-barra-navegacao">
-                    <i class="bi bi-person-add"></i> Criar conta
+                <a href="cadastro-nota.html" class="link-barra-navegacao">
+                    <i class="bi bi-plus-square"></i> Cadastrar nota
                 </a>
-                <a href="login.html" class="link-barra-navegacao">
-                    <i class="bi bi-box-arrow-in-right"></i> Entrar
+                <a href="consulta-notas.html" class="link-barra-navegacao">
+                    <i class="bi bi-search"></i> Consultar notas
                 </a>
-                <a href="sobre-desenvolvedor.html" class="link-barra-navegacao">
-                    <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+                <a href="edicao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-pencil-square"></i> Editar dados
+                </a>
+                <a href="delecao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-trash"></i> Deletar conta
+                </a>
+                <a href="javascript:void(0)" id="link-logout" class="link-barra-navegacao">
+                    <i class="bi bi-box-arrow-in-left"></i> Sair
                 </a>
             </nav>
         </div>
     </header>
     <main class="conteudo-principal">
-        <section class="secao-introducao">
-            <h2 class="titulo-secao-introducao">Suas anotações sempre ao seu alcance</h2>
-            <p class="texto-secao-introducao">Anote tudo de forma simples e rápida.</p>
-            <div class="container-botoes-chamada-acao">
-                <a href="cadastro-usuario.html" class="botao botao-principal botao-chamada-acao">
-                    Criar conta <i class="bi bi-person-add"></i>
-                </a>
-                <a href="login.html" class="botao botao-principal botao-chamada-acao">
-                    Entrar <i class="bi bi-box-arrow-in-right"></i>
+        <h2>
+            Editar nota <i class="bi bi-pencil-square"></i>
+        </h2>
+        <form id="formulario" class="formulario" novalidate>
+            <input type="hidden" name="id" id="campo-id">
+            <label for="campo-titulo" class="label">
+                Novo título: <span class="obrigatorio">*</span>
+            </label>
+            <input type="text" name="titulo" id="campo-titulo" class="campo" placeholder="Digite um título"
+                maxlength="60" required>
+            <label for="campo-texto" class="label">
+                Novo texto: <span class="obrigatorio">*</span>
+            </label>
+            <textarea name="texto" id="campo-texto" class="campo campo-texto" placeholder="Digite um texto"
+                maxlength="200" required></textarea>
+            <div class="container-botoes-formulario">
+                <button type="submit" class="botao botao-principal botao-formulario">
+                    Editar nota <i class="bi bi-pencil-square"></i>
+                </button>
+                <a href="consulta-notas.html" class="botao botao-perigo botao-formulario">
+                    Voltar <i class="bi bi-arrow-left-square"></i>
                 </a>
             </div>
-        </section>
-        <figure class="area-imagem-destaque">
-            <img src="imagens/bloco-notas.svg" alt="Ilustração de um bloco de notas" class="imagem-destaque">
-            <figcaption class="legenda-imagem-destaque">
-                Ilustração por <a href="https://storyset.com/work" target="_blank" class="link">Storyset</a>
-            </figcaption>
-        </figure>
+        </form>
     </main>
     <div class="ferramentas-acessibilidade">
         <button type="button" id="botao-alternar-container-botoes-acessibilidade"

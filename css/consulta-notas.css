@@ -1,0 +1,57 @@
+.conteudo-principal {
+    width: 90rem;
+}
+
+.formulario {
+    width: 70rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.container-notas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+}
+
+.nota {
+    display: none;
+    flex-direction: column;
+    gap: 1.6rem;
+    flex: 1 1 calc(30rem - 3.2rem);
+    background-color: #fff;
+    padding: 1.6rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+}
+
+.nota.ativo {
+    display: flex;
+}
+
+.titulo-nota {
+    font-size: 2.2rem;
+}
+
+.texto-nota {
+    font-size: 1.6rem;
+}
+
+.container-botoes-acoes-nota {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-top: auto;
+}
+
+.botao-acao-nota {
+    font-size: 1.4rem;
+    padding: 1.4rem 1.6rem;
+}
+
+.container-botoes-modal-confirmacao {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}

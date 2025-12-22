@@ -5,6 +5,8 @@ export const campoNome = document.querySelector('#campo-nome');
 export const campoSenha = document.querySelector('#campo-senha');
 export const campoPerguntaSeguranca = document.querySelector('#campo-pergunta-seguranca');
 export const campoResposta = document.querySelector('#campo-resposta');
+export const campoTitulo = document.querySelector('#campo-titulo');
+export const campoTexto = document.querySelector('#campo-texto');
 export const fundoModalAlerta = document.querySelector('#fundo-modal-alerta');
 const modalAlerta = document.querySelector('#modal-alerta');
 const textoModalAlerta = document.querySelector('#texto-modal-alerta');
@@ -139,6 +141,112 @@ export async function gerenciarUsuario(dadosUsuario) {
     const { sucesso, dados, mensagem } = await enviarDados(metodo, urlEnvio, parametros);
 
     if (!sucesso) {
+        const { encerrouSessao } = dados;
+        const { campoErro } = dados;
+        let encontrouCampoErro = false;
+
+        if (encerrouSessao) {
+            redirecionar(mensagem, 'index.html');
+            return;
+        }
+
+        alternarModalAlerta(true, mensagem);
+
+        for (const campo of campos) {
+            if (campoErro === campo.name) {
+                limparCampo(campo);
+                encontrouCampoErro = true;
+            }
+        }
+
+        if (!encontrouCampoErro) {
+            limparCampos(campos);
+        }
+
+        return;
+    }
+
+    redirecionar(mensagem, urlRedirecionamento);
+}
+
+export function validarCampoObrigatorio(campo, valorCampo, quantidadeMaximaCaracteres) {
+    return campo.checkValidity() && valorCampo && valorCampo.length <= quantidadeMaximaCaracteres;
+}
+
+export function exibirErro(mensagemErro, campoErro) {
+    alternarModalAlerta(true, mensagemErro);
+    limparCampo(campoErro);
+}
+
+function limparCampo(campo) {
+    campo.value = '';
+    campo.blur();
+}
+
+function limparCampos(campos) {
+    campos.forEach(function (elemento) {
+        limparCampo(elemento);
+    });
+}
+
+export function redirecionar(mensagemRedirecionamento, urlRedirecionamento) {
+    localStorage.setItem('mensagem-redirecionamento', mensagemRedirecionamento);
+    window.location.href = urlRedirecionamento;
+}
+
+export async function controlarSessaoUsuario(acao, urlEnvio) {
+    const { sucesso, mensagem } = await enviarDados('POST', urlEnvio, { acao: acao });
+
+    if (!sucesso) {
+        console.error(mensagem);
+        return;
+    }
+
+    redirecionar(mensagem, 'index.html');
+}
+
+export async function gerenciarNota(dadosNota) {
+    console.log('Teste');
+    const { metodo, urlEnvio, acao, campos, urlRedirecionamento } = dadosNota;
+    let parametros = {};
+    parametros.acao = acao;
+
+    for (const campo of campos) {
+        const valorCampo = campo.value.trim();
+
+        switch (campo.id) {
+            case 'campo-titulo':
+                if (!validarCampoObrigatorio(campo, valorCampo, 60)) {
+                    exibirErro('Erro: O título é obrigatório e deve conter até 60 caracteres. Por favor, tente novamente.', campo);
+                    return;
+                }
+
+                parametros.titulo = valorCampo;
+                break;
+            case 'campo-texto':
+                if (!validarCampoObrigatorio(campo, valorCampo, 200)) {
+                    exibirErro('Erro: O texto é obrigatório e deve conter até 200 caracteres. Por favor, tente novamente.', campo);
+                    return;
+                }
+
+                parametros.texto = valorCampo;
+                break;
+            case 'campo-id':
+                if (!validarID(valorCampo)) {
+                    return;
+                }
+
+                parametros.id = valorCampo;
+                break;
+            default:
+                alternarModalAlerta(true, 'Erro: Campo inválido. Por favor, tente novamente mais tarde.');
+                return;
+        }
+    }
+
+    const { sucesso, dados, mensagem } = await enviarDados(metodo, urlEnvio, parametros);
+
+    if (!sucesso) {
         const { campoErro } = dados;
         let encontrouCampoErro = false;
         alternarModalAlerta(true, mensagem);
@@ -160,27 +268,13 @@ export async function gerenciarUsuario(dadosUsuario) {
     redirecionar(mensagem, urlRedirecionamento);
 }
 
-function validarCampoObrigatorio(campo, valorCampo, quantidadeMaximaCaracteres) {
-    return campo.checkValidity() && valorCampo && valorCampo.length <= quantidadeMaximaCaracteres;
-}
+export function validarID(valor) {
+    const id = Number(valor);
 
-function exibirErro(mensagemErro, campoErro) {
-    alternarModalAlerta(true, mensagemErro);
-    limparCampo(campoErro);
-}
+    if (!Number.isInteger(id) || id < 1) {
+        alternarModalAlerta(true, 'Erro: O ID é obrigatório e deve ser um número maior ou igual a 1. Por favor, tente novamente.');
+        return false;
+    }
 
-function limparCampo(campo) {
-    campo.value = '';
-    campo.blur();
-}
-
-function limparCampos(campos) {
-    campos.forEach(function (elemento) {
-        limparCampo(elemento);
-    });
-}
-
-function redirecionar(mensagemRedirecionamento, urlRedirecionamento) {
-    localStorage.setItem('mensagem-redirecionamento', mensagemRedirecionamento);
-    window.location.href = urlRedirecionamento;
+    return true;
 }

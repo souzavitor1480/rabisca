@@ -36,7 +36,7 @@ function carregarTamanhoFontePreferido() {
 }
 
 async function consultarAnoAtual() {
-    const { sucesso, dados, mensagem } = await enviarDados('GET', 'consulta-ano-atua.php', { acao: 'consultar-ano-atual' });
+    const { sucesso, dados, mensagem } = await enviarDados('GET', 'consultar-ano-atual.php', { acao: 'consultar-ano-atual' });
 
     if (!sucesso) {
         console.error(mensagem);

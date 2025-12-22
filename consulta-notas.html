@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabisca | Consultar notas</title>
+    <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/consulta-notas.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/botoes-principais.css">
+    <link rel="stylesheet" href="css/modais.css">
+    <link rel="stylesheet" href="css/botoes-perigo.css">
+    <link rel="stylesheet" href="css/botoes-fechar-modais-alerta.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="javascript/principal.js"></script>
+    <script type="module" src="javascript/fechamento-modal-alerta.js"></script>
+    <script type="module" src="javascript/verificacao-sessao-expirou.js"></script>
+    <script type="module" src="javascript/logout.js"></script>
+    <script type="module" src="javascript/consulta-notas.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container-logo">
+            <img src="imagens/logo.svg" alt="Logo do Rabisca">
+            <h1>Rabisca</h1>
+        </div>
+        <div class="container-barra-navegacao">
+            <button type="button" id="botao-alternar-barra-navegacao" class="botao-alternar-barra-navegacao">
+                <i id="icone-alternar-barra-navegacao" class="bi bi-list"></i>
+            </button>
+            <nav id="barra-navegacao" class="barra-navegacao">
+                <a href="painel.html" class="link-barra-navegacao">
+                    <i class="bi bi-speedometer"></i> Painel
+                </a>
+                <a href="cadastro-nota.html" class="link-barra-navegacao">
+                    <i class="bi bi-plus-square"></i> Cadastrar nota
+                </a>
+                <a href="consulta-notas.html" class="link-barra-navegacao">
+                    <i class="bi bi-search"></i> Consultar notas
+                </a>
+                <a href="edicao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-pencil-square"></i> Editar dados
+                </a>
+                <a href="delecao-usuario.html" class="link-barra-navegacao">
+                    <i class="bi bi-trash"></i> Deletar conta
+                </a>
+                <a href="javascript:void(0)" id="link-logout" class="link-barra-navegacao">
+                    <i class="bi bi-box-arrow-in-left"></i> Sair
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main class="conteudo-principal">
+        <h2>
+            Pesquisar nota <i class="bi bi-search"></i>
+        </h2>
+        <form id="formulario" class="formulario" novalidate>
+            <label for="campo-pesquisa" class="label">
+                Pesquisa: <span class="obrigatorio">*</span>
+            </label>
+            <input type="search" name="Pesquisa" id="campo-pesquisa" class="campo" placeholder="Digite uma pesquisa"
+                maxlength="60" required>
+            <button type="submit" class="botao botao-principal botao-formulario">
+                Pesquisar <i class="bi bi-search"></i>
+            </button>
+        </form>
+        <h2>
+            Consultar notas <i class="bi bi-card-text"></i>
+        </h2>
+        <div id="container-notas" class="container-notas">
+            <article id="1" class="nota ativo">
+                <h3 class="titulo-nota">Título de teste 1</h3>
+                <p class="texto-nota">Texto de teste 1</p>
+                <div class="container-botoes-acoes-nota">
+                    <button type="button" data-id="1" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                        Editar <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" data-id="1" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                        Deletar <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </article>
+            <article id="2" class="nota ativo">
+                <h3 class="titulo-nota">Título de teste 2</h3>
+                <p class="texto-nota">Texto de teste 2</p>
+                <div class="container-botoes-acoes-nota">
+                    <button type="button" data-id="2" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                        Editar <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" data-id="2" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                        Deletar <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </article>
+            <article id="3" class="nota ativo">
+                <h3 class="titulo-nota">Título de teste 3</h3>
+                <p class="texto-nota">Texto de teste 3</p>
+                <div class="container-botoes-acoes-nota">
+                    <button type="button" data-id="3" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                        Editar <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" data-id="3" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                        Deletar <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </article>
+            <article id="4" class="nota ativo">
+                <h3 class="titulo-nota">Título de teste 4</h3>
+                <p class="texto-nota">Texto de teste 4</p>
+                <div class="container-botoes-acoes-nota">
+                    <button type="button" data-id="4" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                        Editar <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" data-id="4" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                        Deletar <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </article>
+            <article id="5" class="nota ativo">
+                <h3 class="titulo-nota">Título de teste 5</h3>
+                <p class="texto-nota">Texto de teste 5</p>
+                <div class="container-botoes-acoes-nota">
+                    <button type="button" data-id="5" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                        Editar <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button type="button" data-id="5" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                        Deletar <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </article>
+        </div>
+    </main>
+    <template id="template">
+        <article id="" class="nota ativo">
+            <h3 class="titulo-nota"></h3>
+            <p class="texto-nota"></p>
+            <div class="container-botoes-acoes-nota">
+                <button type="button" data-id="" class="botao botao-sucesso botao-acao-nota botao-editar-nota">
+                    Editar <i class="bi bi-pencil-square"></i>
+                </button>
+                <button type="button" data-id="" class="botao botao-perigo botao-acao-nota botao-deletar-nota">
+                    Deletar <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </article>
+    </template>
+    <div class="ferramentas-acessibilidade">
+        <button type="button" id="botao-alternar-container-botoes-acessibilidade"
+            class="botao botao-sucesso botao-acessibilidade">
+            <i class="bi bi-universal-access"></i>
+        </button>
+        <div id="container-botoes-acessibilidade" class="container-botoes-acessibilidade">
+            <button type="button" id="botao-aumentar-fonte" class="botao botao-sucesso botao-acessibilidade">A+</button>
+            <button type="button" id="botao-diminuir-fonte" class="botao botao-sucesso botao-acessibilidade">A-</button>
+            <button type="button" id="botao-redefinir-fonte" class="botao botao-sucesso botao-acessibilidade">
+                <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+        </div>
+    </div>
+    <div id="fundo-modal-alerta" class="fundo-modal"></div>
+    <div id="modal-alerta" class="modal">
+        <h4 class="titulo-modal">
+            Atenção <i class="bi bi-exclamation-triangle"></i>
+        </h4>
+        <p id="texto-modal-alerta" class="texto-modal"></p>
+        <button type="button" id="botao-fechar-modal-alerta"
+            class="botao botao-perigo botao-modal botao-fechar-modal-alerta">
+            Fechar <i class="bi bi-x-square"></i>
+        </button>
+    </div>
+    <div id="fundo-modal-confirmacao" class="fundo-modal"></div>
+    <div id="modal-confirmacao" class="modal">
+        <h4 class="titulo-modal">
+            Atenção <i class="bi bi-exclamation-triangle"></i>
+        </h4>
+        <p class="texto-modal">Você tem certeza?</p>
+        <div class="container-botoes-modal-confirmacao">
+            <button type="button" id="botao-confirmar" class="botao botao-sucesso botao-modal">
+                Sim <i class="bi bi-check-square"></i>
+            </button>
+            <button type="button" id="botao-negar" class="botao botao-perigo botao-modal">
+                Não <i class="bi bi-x-square"></i>
+            </button>
+        </div>
+    </div>
+    <footer class="rodape">
+        <p class="creditos">
+            <i class="bi bi-c-circle"></i>
+            <span id="container-ano-atual">2025</span> Rabisca - Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>
