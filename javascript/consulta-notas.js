@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     const { sucesso, dados, mensagem } = await enviarDados('GET', 'consulta-notas.php', { acao: 'consultar-notas' });
 
     if (!sucesso) {
-        const { encerrouSessao } = dados;
-
-        if (encerrouSessao) {
-            redirecionar(mensagem, 'index.html');
-            return;
-        }
-
         redirecionar(mensagem, 'painel.html');
+        return;
+    }
+
+    const { encerrouSessao } = dados;
+
+    if (encerrouSessao) {
+        redirecionar(mensagem, 'index.html');
         return;
     }
 
