@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Rabisca é um espaço simples e intuitivo para criar anotações, organizar ideias e registrar pensamentos do dia a dia, ajudando você a colocar tudo no papel de forma rápida e prática.">
+    <meta name="keywords"
+        content="anotações, notas online, bloco de notas, organizar ideias, registrar pensamentos, escrita rápida, produtividade, app de anotações, ferramenta de notas, anotações pessoais, ideias e lembretes, rabisca">
+    <title>Rabisca | Onde suas ideias ganham forma</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components/areas-botoes-chamada-acao.css">
+    <link rel="stylesheet" href="css/pages/index.css">
+    <link rel="stylesheet" href="css/components/links.css">
+    <link rel="stylesheet" href="css/components/modais.css">
+    <link rel="stylesheet" href="css/components/botoes-fechar-modais-alerta.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="javascript/scripts.js"></script>
+    <script type="module" src="javascript/modules/alternancia-mensagem-redirecionamento.js"></script>
+    <script type="module" src="javascript/modules/fechamento-modal-alerta.js"></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img src="images/logo.svg" alt="Logo do Rabisca" class="imagem-logo">
+        <h1>Rabisca</h1>
+    </header>
+
+    <nav class="menu-navegacao">
+        <button type="button" id="botaoAlternarMenuNavegacao" class="botao-alternar-menu-navegacao">
+            <i id="iconeAlternarMenuNavegacao" class="bi bi-list"></i>
+        </button>
+        <div id="areaLinksMenuNavegacao" class="area-links-menu-navegacao">
+            <a href="index.html" class="link-menu-navegacao">
+                <i class="bi bi-house"></i> Início
+            </a>
+            <a href="cadastro-usuario.html" class="link-menu-navegacao">
+                <i class="bi bi-person-add"></i> Criar conta
+            </a>
+            <a href="login.html" class="link-menu-navegacao">
+                <i class="bi bi-box-arrow-in-right"></i> Entrar
+            </a>
+            <a href="sobre-desenvolvedor.html" class="link-menu-navegacao">
+                <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="secao-introducao">
+            <h2 class="titulo-secao-introducao">Suas anotações sempre ao seu alcance</h2>
+            <p class="texto-secao-introducao">Registre seus pensamentos e coloque suas ideias para fora.</p>
+            <div class="area-botoes-chamada-acao">
+                <a href="cadastro-usuario.html" class="botao-chamada-acao">
+                    Criar conta <i class="bi bi-person-add"></i>
+                </a>
+                <a href="login.html" class="botao-chamada-acao">
+                    Entrar <i class="bi bi-box-arrow-in-right"></i>
+                </a>
+            </div>
+        </section>
+        <figure class="area-imagem-destaque">
+            <img src="images/bloco-notas.svg" alt="Ilustração de um bloco de notas" class="imagem-destaque">
+            <figcaption class="legenda-imagem-destaque">
+                Ilustração por <a href="https://storyset.com/work" target="_blank" class="link">Storyset</a>
+            </figcaption>
+        </figure>
+    </main>
+
+    <div class="area-acessibilidade">
+        <button type="button" id="botaoAlternarBotoesAcessibilidade" class="botao-acessibilidade">
+            <i class="bi bi-universal-access"></i>
+        </button>
+        <div id="areaBotoesAcessibilidade" class="area-botoes-acessibilidade">
+            <button type="button" id="botaoAumentarFonte" class="botao-acessibilidade">A+</button>
+            <button type="button" id="botaoDiminuirFonte" class="botao-acessibilidade">A-</button>
+            <button type="button" id="botaoRedefinirFonte" class="botao-acessibilidade">
+                <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="fundoModalAlerta" class="fundo-modal"></div>
+    <div id="modalAlerta" class="modal">
+        <h3 class="titulo-modal">
+            Atenção <i class="bi bi-exclamation-triangle"></i>
+        </h3>
+        <p id="textoModalAlerta" class="texto-modal"></p>
+        <button type="button" id="botaoFecharModalAlerta" class="botao-modal botao-fechar-modal-alerta">
+            Fechar <i class="bi bi-x-square"></i>
+        </button>
+    </div>
+
+    <footer class="rodape">
+        <p class="creditos">
+            &copy; <span id="areaAnoAtual">2025</span> Rabisca | Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>

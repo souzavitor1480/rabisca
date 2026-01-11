@@ -1,0 +1,8 @@
+.botao-fechar-modal-alerta {
+    align-self: flex-end;
+    background-color: #c84755;
+}
+
+.botao-fechar-modal-alerta:hover {
+    background-color: #aa3c48;
+}
