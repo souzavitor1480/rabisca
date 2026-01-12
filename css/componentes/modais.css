@@ -1,0 +1,59 @@
+.fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fundo-modal.ativo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    overflow-y: auto;
+    background-color: #fff;
+    width: 40rem;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 1.6rem;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.ativo {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.titulo-modal {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #bbb;
+}
+
+.texto-modal {
+    font-size: 1.6rem;
+    min-height: 3.2rem;
+}
+
+.botao-modal {
+    font-size: 1.3rem;
+    padding: 1.3rem 1.5rem;
+}
