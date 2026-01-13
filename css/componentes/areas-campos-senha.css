@@ -1,0 +1,15 @@
+.area-campo-senha {
+    position: relative;
+}
+
+.campo-senha {
+    padding-right: 4rem;
+}
+
+.botao-alternar-senha {
+    position: absolute;
+    top: 1.7rem;
+    right: 1.3rem;
+    font-size: 1.5rem;
+    color: #121212;
+}

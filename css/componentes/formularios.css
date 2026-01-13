@@ -1,0 +1,40 @@
+.formulario {
+    margin-bottom: 1.6rem;
+}
+
+.formulario:last-child {
+    margin: 0;
+}
+
+.label {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.campo-obrigatorio {
+    color: #c84755;
+}
+
+.campo {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: #121212;
+    width: 100%;
+    padding: 1.5rem 1.3rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    margin-bottom: 1.6rem;
+}
+
+.campo:focus {
+    border-color: #e08e4c;
+    outline: none;
+    box-shadow: 0 0 10px #e08e4c;
+}
+
+.botao-formulario {
+    font-size: 1.5rem;
+    padding: 1.5rem 1.7rem;
+}

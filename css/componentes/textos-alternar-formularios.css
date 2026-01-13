@@ -1,0 +1,8 @@
+.texto-alternar-formularios {
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.texto-alternar-formularios:last-child {
+    margin: 0;
+}
