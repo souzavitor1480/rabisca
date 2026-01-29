@@ -1,0 +1,177 @@
+.conteudo-principal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 3.2rem;
+    padding-bottom: 8rem;
+}
+
+.secao-introducao,
+.area-imagem-destaque {
+    text-align: center;
+}
+
+.secao-introducao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.6rem;
+}
+
+.secao-introducao p {
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.area-botoes-chamada-acao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.area-botoes-chamada-acao a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    line-height: normal;
+    color: #fff;
+    background-color: #e08e4c;
+    padding: 1.6rem 1.8rem;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+.area-botoes-chamada-acao a:hover {
+    background-color: #c97f43;
+}
+
+.area-imagem-destaque img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+}
+
+.legenda-imagem-destaque {
+    font-size: 1.6rem;
+}
+
+.legenda-imagem-destaque a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.legenda-imagem-destaque a:hover {
+    text-decoration: underline;
+}
+
+#fundoModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#fundoModal.ativo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    overflow-y: auto;
+    background-color: #fff;
+    width: 40rem;
+    max-width: 90%;
+    max-height: 90%;
+    padding: 1.6rem;
+    border-radius: 8px;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.ativo {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid #bbb;
+}
+
+#modal p {
+    font-size: 1.6rem;
+    min-height: 3.2rem;
+}
+
+#modal button {
+    align-self: flex-end;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    background-color: #c84755;
+    padding: 1.3rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#modal button:hover {
+    background-color: #b03f4b;
+}
+
+@media (min-width: 992px) {
+    .secao-introducao h2 {
+        font-size: 2.7rem;
+    }
+
+    .secao-introducao p {
+        font-size: 2rem;
+    }
+
+    .area-botoes-chamada-acao a {
+        font-size: 1.8rem;
+        padding: 1.8rem 2rem;
+    }
+
+    .area-imagem-destaque img {
+        width: 450px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .conteudo-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 5rem;
+    }
+
+    .secao-introducao {
+        text-align: left;
+    }
+
+    .area-botoes-chamada-acao {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1400px) {
+    .area-imagem-destaque img {
+        width: 500px;
+    }
+}

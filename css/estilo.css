@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f0f0f0;
+    min-height: 100dvh;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    padding: 3.2rem 1.6rem;
+}
+
+.cabecalho img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cabecalho h1 {
+    font-size: 3.2rem;
+}
+
+.menu-navegacao {
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: #c84755;
+}
+
+.menu-navegacao button {
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: transparent;
+    padding: 1.6rem 1.8rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-navegacao button:hover {
+    background-color: #b03f4b;
+}
+
+#areaLinksMenuNavegacao {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    background-color: #b03f4b;
+    height: 0;
+    transition: 0.5s ease-in-out;
+}
+
+#areaLinksMenuNavegacao a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    line-height: normal;
+    color: #fff;
+    padding: 1.6rem 1.8rem;
+}
+
+.conteudo-principal {
+    flex: 1;
+    align-self: center;
+    width: 140rem;
+    max-width: 90%;
+    padding: 3.2rem 0;
+}
+
+.area-acessibilidade {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.area-acessibilidade button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #62a48d;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.area-acessibilidade button:hover {
+    background-color: #548f7b;
+}
+
+#areaBotoesAcessibilidade {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    overflow-y: hidden;
+    height: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.rodape {
+    text-align: center;
+    color: #fff;
+    background-color: #495672;
+    padding: 1.6rem;
+}
+
+.rodape p {
+    font-size: 1.6rem;
+}
+
+@media (min-width: 1200px) {
+    .menu-navegacao button {
+        display: none;
+    }
+
+    #areaLinksMenuNavegacao {
+        flex-direction: row;
+        justify-content: center;
+        background-color: transparent;
+        height: auto;
+    }
+
+    #areaLinksMenuNavegacao a {
+        transition: 0.5s ease-in-out;
+    }
+
+    #areaLinksMenuNavegacao a:hover {
+        background-color: #b03f4b;
+    }
+}
+
+@media (min-width: 1400px) {
+    html {
+        font-size: 64.5%;
+    }
+}

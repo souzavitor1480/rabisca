@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabisca | Onde suas ideias ganham forma</title>
+    <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="javascript/customizado.js"></script>
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/index.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="imagens/logotipo.svg" alt="Logotipo do Rabisca">
+        <h1>Rabisca</h1>
+    </header>
+    <nav class="menu-navegacao">
+        <button title="Abrir ou fechar o menu" id="botaoAlternanciaMenuNavegacao">
+            <i id="iconeAlternanciaMenuNavegacao" class="bi bi-list"></i>
+        </button>
+        <div id="areaLinksMenuNavegacao">
+            <a href="index.html">
+                <i class="bi bi-house"></i> Início
+            </a>
+            <a href="cadastro-usuario.html">
+                <i class="bi bi-person-add"></i> Criar conta
+            </a>
+            <a href="login.html">
+                <i class="bi bi-box-arrow-in-right"></i> Entrar
+            </a>
+            <a href="sobre-desenvolvedor.html">
+                <i class="bi bi-file-earmark-person"></i> Sobre o desenvolvedor
+            </a>
+        </div>
+    </nav>
+    <main class="conteudo-principal">
+        <section class="secao-introducao">
+            <h2>Suas anotações sempre ao seu alcance</h2>
+            <p>Tire suas ideias da cabeça de forma simples e rápida.</p>
+            <div class="area-botoes-chamada-acao">
+                <a href="cadastro-usuario.html">
+                    Criar conta <i class="bi bi-person-add"></i>
+                </a>
+                <a href="login.html">
+                    Entrar <i class="bi bi-box-arrow-in-right"></i>
+                </a>
+            </div>
+        </section>
+        <figure class="area-imagem-destaque">
+            <img src="imagens/bloco-notas.svg" alt="Ilustração de um bloco de notas">
+            <figcaption class="legenda-imagem-destaque">
+                Ilustração por <a href="https://storyset.com/work" target="_blank">Storyset</a>
+            </figcaption>
+        </figure>
+    </main>
+    <div class="area-acessibilidade">
+        <button title="Mostrar ou ocultar os botões de acessibilidade" id="botaoAlternanciaBotoesAcessibilidade">
+            <i class="bi bi-universal-access"></i>
+        </button>
+        <div id="areaBotoesAcessibilidade">
+            <button title="Aumentar o tamanho do texto" id="botaoAumentarFonte">A+</button>
+            <button title="Diminuir o tamanho do texto" id="botaoDiminuirFonte">A-</button>
+            <button title="Redefinir o tamanho do texto" id="botaoRedefinirFonte">
+                <i class="bi bi-arrow-counterclockwise"></i>
+            </button>
+        </div>
+    </div>
+    <div id="fundoModal"></div>
+    <div id="modal">
+        <h3>
+            Atenção <i class="bi bi-exclamation-triangle"></i>
+        </h3>
+        <p id="textoModal"></p>
+        <button id="botaoFechamentoModal">
+            Fechar <i class="bi bi-x-square"></i>
+        </button>
+    </div>
+    <footer class="rodape">
+        <p>
+            &copy; <span id="areaAnoAtual">2025</span> Rabisca | Todos os direitos reservados.
+        </p>
+    </footer>
+</body>
+</html>
