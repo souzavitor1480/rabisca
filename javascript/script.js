@@ -52,8 +52,7 @@ function alternarFonte(acao) {
 async function consultarAnoAtual() {
     try {
         const resposta = await axiosCustomizado.get('consultar-ano-atual', { params: { acao: 'consultar-ano-atual' } });
-        const { dados } = resposta.data;
-        const { anoAtual } = dados;
+        const { anoAtual } = resposta.data;
         areaAnoAtual.textContent = anoAtual;
     } catch (error) {
         console.error(`Algo deu errado ao processar sua solicitação. Tente novamente mais tarde. Código de erro: ${error.status}.`);
