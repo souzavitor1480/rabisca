@@ -18,11 +18,12 @@
         <img src="imagens/logotipo.svg" alt="Logotipo do Rabisca">
         <h1>Rabisca</h1>
     </header>
+
     <nav class="menu-navegacao">
-        <button title="Abrir ou fechar o menu" id="botaoAlternanciaMenuNavegacao">
-            <i id="iconeAlternanciaMenuNavegacao" class="bi bi-list"></i>
+        <button type="button" title="Mostrar ou ocultar o menu" id="botao-alternancia-menu-navegacao">
+            <i class="bi bi-list"></i>
         </button>
-        <div id="areaLinksMenuNavegacao">
+        <div id="area-links-menu-navegacao">
             <a href="index.html">
                 <i class="bi bi-house"></i> Início
             </a>
@@ -37,10 +38,11 @@
             </a>
         </div>
     </nav>
+
     <main class="conteudo-principal">
         <section class="secao-introducao">
-            <h2>Suas anotações sempre ao seu alcance</h2>
-            <p>Tire suas ideias da cabeça de forma simples e rápida.</p>
+            <h2>Suas anotações, sempre ao seu alcance</h2>
+            <p>Tire suas ideias da cabeça de forma simples.</p>
             <div class="area-botoes-chamada-acao">
                 <a href="cadastro-usuario.html">
                     Criar conta <i class="bi bi-person-add"></i>
@@ -57,31 +59,34 @@
             </figcaption>
         </figure>
     </main>
+
     <div class="area-acessibilidade">
-        <button title="Mostrar ou ocultar os botões de acessibilidade" id="botaoAlternanciaBotoesAcessibilidade">
+        <button type="button" title="Mostrar ou ocultar os botões de acessibilidade" id="botao-alternancia-botoes-acessibilidade">
             <i class="bi bi-universal-access"></i>
         </button>
-        <div id="areaBotoesAcessibilidade">
-            <button title="Aumentar o tamanho do texto" id="botaoAumentarFonte">A+</button>
-            <button title="Diminuir o tamanho do texto" id="botaoDiminuirFonte">A-</button>
-            <button title="Redefinir o tamanho do texto" id="botaoRedefinirFonte">
+        <div id="area-botoes-acessibilidade">
+            <button type="button" title="Aumentar a fonte" id="botao-aumentar-fonte">A+</button>
+            <button type="button" title="Diminuir a fonte" id="botao-diminuir-fonte">A-</button>
+            <button type="button" title="Redefinir a fonte" id="botao-redefinir-fonte">
                 <i class="bi bi-arrow-counterclockwise"></i>
             </button>
         </div>
     </div>
-    <div id="fundoModal"></div>
+
+    <div id="fundo-modal"></div>
     <div id="modal">
         <h3>
-            Atenção <i class="bi bi-exclamation-triangle"></i>
+            Aviso <i class="bi bi-exclamation-triangle"></i>
         </h3>
-        <p id="textoModal"></p>
-        <button id="botaoFechamentoModal">
+        <p></p>
+        <button type="button">
             Fechar <i class="bi bi-x-square"></i>
         </button>
     </div>
+
     <footer class="rodape">
         <p>
-            &copy; <span id="areaAnoAtual">2025</span> Rabisca | Todos os direitos reservados.
+            &copy; <span id="area-ano-atual">2025</span> Rabisca. Todos os direitos reservados.
         </p>
     </footer>
 </body>

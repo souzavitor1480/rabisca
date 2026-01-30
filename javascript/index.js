@@ -1,11 +1,11 @@
-const fundoModal = document.querySelector('#fundoModal');
+const fundoModal = document.querySelector('#fundo-modal');
 const modal = document.querySelector('#modal');
-const textoModal = document.querySelector('#textoModal');
-const botaoFechamentoModal = document.querySelector('#botaoFechamentoModal');
+const textoModal = document.querySelector('#modal p');
+const botaoFechamentoModal = document.querySelector('#modal button');
 
-function alternarModal(exibir, mensagem = '') {
+function alternarModal(mostrar, mensagem = '') {
     [fundoModal, modal].forEach(function (elemento) {
-        elemento.classList.toggle('ativo', exibir);
+        elemento.classList.toggle('ativo', mostrar);
     });
 
     if (mensagem) {
@@ -17,7 +17,8 @@ window.addEventListener('pageshow', async function () {
     try {
         await axiosCustomizado.post('encerramento-sessao.php', { acao: 'encerrar-sessao' });
     } catch (error) {
-        console.error(`Algo deu errado ao processar sua solicitação. Tente novamente mais tarde. Código de erro: ${error.status}.`);
+        const { mensagem = 'Algo deu errado ao concluir sua solicitação. Por favor, tente novamente mais tarde.' } = error.response?.data || {};
+        console.error(mensagem);
     }
 });
 

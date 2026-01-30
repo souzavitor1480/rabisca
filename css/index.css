@@ -44,6 +44,7 @@
 }
 
 .area-imagem-destaque img {
+    display: inline-block;
     width: 400px;
     max-width: 100%;
     height: auto;
@@ -55,26 +56,27 @@
 
 .legenda-imagem-destaque a {
     text-decoration: none;
-    color: #0056b3;
+    line-height: normal;
+    color: #1a73e8;
 }
 
 .legenda-imagem-destaque a:hover {
     text-decoration: underline;
 }
 
-#fundoModal {
+#fundo-modal {
     position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    transition: 0.5s ease-in-out;
     opacity: 0;
     pointer-events: none;
+    transition: 0.5s ease-in-out;
 }
 
-#fundoModal.ativo {
+#fundo-modal.ativo {
     opacity: 1;
     pointer-events: all;
 }
@@ -94,9 +96,9 @@
     max-height: 90%;
     padding: 1.6rem;
     border-radius: 8px;
-    transition: 0.5s ease-in-out;
     opacity: 0;
     pointer-events: none;
+    transition: 0.5s ease-in-out;
 }
 
 #modal.ativo {
@@ -114,7 +116,7 @@
 
 #modal p {
     font-size: 1.6rem;
-    min-height: 3.2rem;
+    min-height: 4rem;
 }
 
 #modal button {

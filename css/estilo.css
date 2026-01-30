@@ -58,7 +58,7 @@ body {
     background-color: #b03f4b;
 }
 
-#areaLinksMenuNavegacao {
+#area-links-menu-navegacao {
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
@@ -67,7 +67,7 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-#areaLinksMenuNavegacao a {
+#area-links-menu-navegacao a {
     font-size: 1.6rem;
     text-decoration: none;
     line-height: normal;
@@ -108,7 +108,7 @@ body {
     background-color: #548f7b;
 }
 
-#areaBotoesAcessibilidade {
+#area-botoes-acessibilidade {
     display: flex;
     flex-direction: column-reverse;
     gap: 1.5rem;
@@ -133,18 +133,20 @@ body {
         display: none;
     }
 
-    #areaLinksMenuNavegacao {
+    #area-links-menu-navegacao {
         flex-direction: row;
         justify-content: center;
+        overflow-y: visible;
         background-color: transparent;
         height: auto;
+        transition: none;
     }
 
-    #areaLinksMenuNavegacao a {
+    #area-links-menu-navegacao a {
         transition: 0.5s ease-in-out;
     }
 
-    #areaLinksMenuNavegacao a:hover {
+    #area-links-menu-navegacao a:hover {
         background-color: #b03f4b;
     }
 }
